@@ -1,0 +1,41 @@
+---> Revisiting the Final Modifier for method and variables:
+- Using final on an instance method means subclasses can't override it.
+- Using final on a class(static) method means subclasses can't hide it.
+
+- When we use `final` with a variable, it means we can't assign or reassign
+a new instance or variable or expression to it, after the initialization.  If we use
+`final` for a local variable in a code block, we can only initialize it fully, or
+assign it a value only once.
+
+------------------------------------------------------------------------------------------
+Records satisfies some characteristics of immutable classes:
+- It uses private, final instances fields, it has a constructor to set data, and
+it doesn't have any setters.
+
+------------------------------------------------------------------------------------------
+- For creating a copy of an object, we can use `.clone()` or `Array.copyOf()` method for
+creating a shallow and deep copy respectively.
+- For defensive copy or to create a class immutable, we'll make the fields of class final,
+so that no object can modify its value after the first time assigning value.
+
+------------------------------------------------------------------------------------------
+For Constructors on Enum:
+- We can set variables for every constant in the enum.
+- We can set default value for these values using no arg constructor.
+- We can have the initializer section for enum as well.
+------------------------------------------------------------------------------------------
+For Constructors on Record:
+Record Constructors come in three flavors:
+- Canonical Constructor or implicitly generated constructor. If we declare our own, then
+all fields must be assigned a value. Because the fields in record are private and final.
+- Custom Constructor is just an overloaded constructor. It must explicitly call
+the canonical constructor as its first statement.
+- Compact constructor --- it is without parenthesis and we cannot do assignments to the
+instance fields in this constructor
+------------------------------------------------------------------------------------------
+- We can get all the classes, methods, the fields, and their types using command:
+javap -p path_to_the_java_class
+
+
+
+

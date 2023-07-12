@@ -1,0 +1,51 @@
+Order By example:
+SELECT * from artists order by name;
+
+Ignoring case sensation:
+SELECT * from albums order by name COLLATE NOCASE;
+
+For Acsending and descending order:
+SELECT * from albums order by name COLLATE NOCASE DESC;
+
+To Order by more than one column:
+SELECT * from albums ORDER BY artist, name COLLATE NOCASE DESC;
+
+Inner Join example:
+SELECT songs.track, songs.title, albums.name FROM songs INNER JOIN albums ON songs.album = albums._id ORDER BY albums.name, songs.track;
+
+Another Inner join example:
+SELECT albums.name, songs.track, songs.title FROM songs INNER JOIN albums ON songs.album = albums._id ORDER BY albums.name, songs.track;
+
+Challeng for INNER Join:
+SELECT artists.name, albums.name FROM albums INNER JOIN artists ON albums.artist = artists._id ORDER BY artists.name COLLATE NOCASE;
+
+Another challenge:
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs
+   ...> INNER JOIN albums ON songs.album = albums._id
+   ...> INNER JOIN artists ON albums.artist = artists._id
+   ...> ORDER BY artists.name, albums.name, songs.track;
+
+Song containing name "doctor":
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id WHERE songs.title LIKE "%doctor%"
+ORDER BY artists.name, albums.name, songs.track;
+
+Views in Databases:
+CREATE VIEW artist_list AS
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id
+ORDER BY artists.name, albums.name, songs.track;
+
+
+We can also query Views same as tables:
+SELECT * from artist_list WHERE name LIKE "jef%";
+
+To drop a view:
+DROP VIEW album_list;
+
+To create a backup of db:
+.backup music-backup
+
+

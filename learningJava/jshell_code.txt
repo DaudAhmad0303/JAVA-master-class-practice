@@ -1,0 +1,494 @@
+hahid@shahid-Latitude-3520:~$ jshell
+|  Welcome to JShell -- Version 18.0.2
+|  For an introduction type: /help intro
+
+jshell> /list -all
+
+  s1 : import java.io.*;
+  s2 : import java.math.*;
+  s3 : import java.net.*;
+  s4 : import java.nio.file.*;
+  s5 : import java.util.*;
+  s6 : import java.util.concurrent.*;
+  s7 : import java.util.function.*;
+  s8 : import java.util.prefs.*;
+  s9 : import java.util.regex.*;
+ s10 : import java.util.stream.*;
+  e1 : JShell --Version
+  e2 : JShell --Version;
+  e3 : clear
+  e4 : exit;
+  e5 : exit();
+
+jshell> /help
+|  Type a Java language expression, statement, or declaration.
+|  Or type one of the following commands:
+|  /list [<name or id>|-all|-start]
+|  	list the source you have typed
+|  /edit <name or id>
+|  	edit a source entry
+|  /drop <name or id>
+|  	delete a source entry
+|  /save [-all|-history|-start] <file>
+|  	Save snippet source to a file
+|  /open <file>
+|  	open a file as source input
+|  /vars [<name or id>|-all|-start]
+|  	list the declared variables and their values
+|  /methods [<name or id>|-all|-start]
+|  	list the declared methods and their signatures
+|  /types [<name or id>|-all|-start]
+|  	list the type declarations
+|  /imports 
+|  	list the imported items
+|  /exit [<integer-expression-snippet>]
+|  	exit the jshell tool
+|  /env [-class-path <path>] [-module-path <path>] [-add-modules <modules>] ...
+|  	view or change the evaluation context
+|  /reset [-class-path <path>] [-module-path <path>] [-add-modules <modules>]...
+|  	reset the jshell tool
+|  /reload [-restore] [-quiet] [-class-path <path>] [-module-path <path>]...
+|  	reset and replay relevant history -- current or previous (-restore)
+|  /history [-all]
+|  	history of what you have typed
+|  /help [<command>|<subject>]
+|  	get information about using the jshell tool
+|  /set editor|start|feedback|mode|prompt|truncation|format ...
+|  	set configuration information
+|  /? [<command>|<subject>]
+|  	get information about using the jshell tool
+|  /! 
+|  	rerun last snippet -- see /help rerun
+|  /<id> 
+|  	rerun snippets by ID or ID range -- see /help rerun
+|  /-<n> 
+|  	rerun n-th previous snippet -- see /help rerun
+|  
+|  For more information type '/help' followed by the name of a
+|  command or a subject.
+|  For example '/help /list' or '/help intro'.
+|  
+|  Subjects:
+|  
+|  intro
+|  	an introduction to the jshell tool
+|  keys
+|  	a description of readline-like input editing
+|  id
+|  	a description of snippet IDs and how use them
+|  shortcuts
+|  	a description of keystrokes for snippet and command completion,
+|  	information access, and automatic code generation
+|  context
+|  	a description of the evaluation context options for /env /reload and /reset
+|  rerun
+|  	a description of ways to re-evaluate previously entered snippets
+
+jshell> /history --all
+
+JShell --Version
+JShell --Version;
+clear
+exit;
+exit();
+/list -all\
+/list -all
+/help
+/history --all
+
+jshell> /history
+
+JShell --Version
+JShell --Version;
+clear
+exit;
+exit();
+/list -all\
+/list -all
+/help
+/history --all
+/history
+
+jshell> /help /list
+|  
+|                                   /list
+|                                   =====
+|  
+|  Show the snippets, prefaced with their snippet IDs.
+|  
+|  /list
+|  	List the currently active snippets of code that you typed or read with /open
+|  
+|  /list -start
+|  	List the evaluated startup snippets
+|  
+|  /list -all
+|  	List all snippets including failed, overwritten, dropped, and startup
+|  
+|  /list <name>
+|  	List snippets with the specified name (preference for active snippets)
+|  
+|  /list <id>
+|  	List the snippet with the specified snippet ID.
+|  	One or more IDs or ID ranges may used, see '/help id'
+
+jshell> /exit
+|  Goodbye
+
+
+shahid@shahid-Latitude-3520:~$ jshell
+|  Welcome to JShell -- Version 18.0.2
+|  For an introduction type: /help intro
+
+jshell> {
+   ...>     int x = 0;
+   ...>     x + x
+   ...> }
+
+jshell> System.out.print("Hello world");
+Hello world
+jshell> System.out.print("Hello Daud");
+Hello Daud
+jshell> int myFirstNumber = 5;
+myFirstNumber ==> 5
+
+jshell> System.out.print(myFirstNumber);
+5
+jshell> myFirstNumber = 10;
+myFirstNumber ==> 10
+
+jshell> System.out.print(myFirstNumber);
+10
+jshell> /list
+
+   1 : System.out.print("Hello world");
+   2 : System.out.print("Hello Daud");
+   3 : int myFirstNumber = 5;
+   4 : System.out.print(myFirstNumber);
+   5 : myFirstNumber = 10;
+   6 : System.out.print(myFirstNumber);
+
+jshell> int myFirstNumber = 5;
+myFirstNumber ==> 5
+
+jshell> double myFirstNumber = 5;
+myFirstNumber ==> 5.0
+
+jshell> double myFirstNumber = 5;
+myFirstNumber ==> 5.0
+
+jshell> int myFirstNumber = (5 + 10) + (2 * 10);
+myFirstNumber ==> 35
+
+jshell> int secondNumber = 12;
+secondNumber ==> 12
+
+jshell> int mysecondNumber = 12;
+mysecondNumber ==> 12
+
+jshell> int myThirdNumber = 6;
+myThirdNumber ==> 6
+
+jshell> System.out.print(myFirstNumber);
+35
+
+jshell> System.out.printf("Hello world");
+Hello world$16 ==> java.io.PrintStream@133314b
+
+jshell> /var
+|    int myFirstNumber = 35
+|    int secondNumber = 12
+|    int mysecondNumber = 12
+|    int myThirdNumber = 6
+|    PrintStream $16 = java.io.PrintStream@133314b
+
+
+jshell> int myLastOne = 1000 - myTotal;
+myLastOne ==> 883
+
+jshell> System.out.print(myLastOne);
+883
+
+jshell> int myMaxIntValue = Integer.MAX_VALUE;
+myMaxIntValue ==> 2147483647
+
+jshell> int myMinIntValue = Integer.MIN_VALUE;
+myMinIntValue ==> -2147483648
+
+jshell> System.out.print("Integer Maximum Value = " + myMaxIntValue)
+Integer Maximum Value = 2147483647
+jshell> System.out.print("Integer Maximum Value = " + myMaxIntValue);
+Integer Maximum Value = 2147483647
+
+jshell> System.out.print("Integer Values Range (" + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE + ")");
+Integer Values Range (-2147483648 to 2147483647)
+jshell> System.out.print("Integer Values Range (" + Integer.MIN_VALUE + 1 + " to " + Integer.MAX_VALUE + ")");
+Integer Values Range (-21474836481 to 2147483647)
+jshell> System.out.print("Integer Values Range (" + (Integer.MIN_VALUE + 1) + " to " + Integer.MAX_VALUE + ")");
+Integer Values Range (-2147483647 to 2147483647)
+jshell> System.out.print("Integer Values Range (" + (Integer.MIN_VALUE - 1) + " to " + Integer.MAX_VALUE + ")");
+Integer Values Range (2147483647 to 2147483647)
+jshell> int myMaxIntTest = 2147483648;
+|  Error:
+|  integer number too large
+|  int myMaxIntTest = 2147483648;
+|                     ^
+
+jshell> int myMaxIntTest = 2_147_483_648;
+|  Error:
+|  integer number too large
+|  int myMaxIntTest = 2_147_483_648;
+|                     ^
+
+jshell> int myMaxIntTest = 2_147_483_647;
+myMaxIntTest ==> 2147483647
+
+jshell> System.out.print("Byte Values Range (" + Byte.MIN_VALUE + " to " + Byte.MAX_VALUE + ")");
+Byte Values Range (-128 to 127)
+
+jshell> System.out.print("Byte Values Range (" + Byte.MIN_VALUE + " to " + Byte.MAX_VALUE + ")");
+Byte Values Range (-128 to 127)
+jshell> System.out.print("Integer Values Range (" + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE + ")");
+Integer Values Range (-2147483648 to 2147483647)
+jshell> System.out.print("Integer Short Range (" + Short.MIN_VALUE + " to " + Short.MAX_VALUE + ")");
+Integer Short Range (-32768 to 32767)
+jshell> long myLongValue = 100L;
+myLongValue ==> 100
+
+jshell> myL
+myLastOne     myLongValue   
+jshell> myLongValue
+myLongValue ==> 100
+
+jshell> System.out.print("A long has a width of " + Long.SIZE);
+A long has a width of 64
+jshell> System.out.print("Integer Long Range (" + Long.MIN_VALUE + " to " + Long.MAX_VALUE + ")");
+Integer Long Range (-9223372036854775808 to 9223372036854775807)
+
+jshell> long biglongLiteralValue = 2_147_483__647_234L;
+biglongLiteralValue ==> 2147483647234
+
+jshell> long biglongLiteralValue = 2_147_483__647_234_232L;
+biglongLiteralValue ==> 2147483647234232
+
+jshell> long biglongLiteralValue = 2_147_483__647_234_232;
+|  Error:
+|  integer number too large
+|  long biglongLiteralValue = 2_147_483__647_234_232;
+|                             ^
+
+jshell> long biglongLiteralValue = 2_147_483__647_234_232L;
+biglongLiteralValue ==> 2147483647234232
+
+jshell> short  myMinShortValue = Short.MIN_VALUE; int myMinIntValue = Integer.MIN_VALUE;
+myMinShortValue ==> -32768
+myMinIntValue ==> -2147483648
+
+jshell> byte myMinByteValue = Byte.MIN_VALUE, myMaxValue = Byte.MAX_VALUE;
+myMinByteValue ==> -128
+myMaxValue ==> 127
+
+jshell> /var
+|    int myFirstNumber = 35
+|    int secondNumber = 12
+|    int mysecondNumber = 12
+|    int myThirdNumber = 6
+|    PrintStream $16 = java.io.PrintStream@133314b
+|    int myTotal = 117
+|    int myLastOne = 883
+|    int myMaxIntValue = 2147483647
+|    int myMaxIntTest = 2147483647
+|    long myLongValue = 100
+|    long biglongLiteralValue = 2147483647234232
+|    short myMinShortValue = -32768
+|    int myMinIntValue = -2147483648
+|    byte myMinByteValue = -128
+|    byte myMaxValue = 127
+
+jshell> int myTotal = (myMinIntValue / 2);
+myTotal ==> -1073741824
+
+jshell> byte myNewByteValue = (myMinByteValue / 2);
+|  Error:
+|  incompatible types: possible lossy conversion from int to byte
+|  byte myNewByteValue = (myMinByteValue / 2);
+|                         ^----------------^
+
+jshell> byte myNewByteValue = (byte) (myMinByteValue / 2);
+myNewByteValue ==> -64
+
+jshell> short myNewShortValue = (myMinShortValue / 2);
+|  Error:
+|  incompatible types: possible lossy conversion from int to short
+|  short myNewShortValue = (myMinShortValue / 2);
+|                           ^-----------------^
+
+jshell> short myNewShortValue = (short) (myMinShortValue / 2);
+myNewShortValue ==> -16384
+
+jshell> byte myNewByteValue = (byte) (32200 / 2);
+myNewByteValue ==> -28
+
+jshell> System.out.print(Short.MAX_VALUE);
+32767
+jshell> System.out.print(Byte.MAX_VALUE);
+127
+jshell> byte myNewByteValue = (byte) (250 / 2);
+myNewByteValue ==> 125
+
+jshell> byte myNewByteValue = (byte) (260 / 2);
+myNewByteValue ==> -126
+
+jshell> byte myNewByteValue = (byte) (255 / 2);
+myNewByteValue ==> 127
+
+jshell> byte myNewByteValue = (byte) (254 / 2);
+myNewByteValue ==> 127
+
+jshell> byte myNewByteValue = (byte) (256 / 2);
+myNewByteValue ==> -128
+
+jshell> byte myNewByteValue = (byte) (258 / 2);
+myNewByteValue ==> -127
+
+jshell> byte myNewByteValue = (byte) (260 / 2);
+myNewByteValue ==> -126
+
+jshell> byte myNewByteValue = (byte) (512 / 2);
+myNewByteValue ==> 0
+
+jshell> short myNewShortValue = (-128 / 2);
+myNewShortValue ==> -64
+
+jshell> byte myByte1 = 10;
+myByte1 ==> 10
+
+jshell> byte myByte1 = 10; short myShort1 = 2000; int myInt1 = 45973;
+myByte1 ==> 10
+myShort1 ==> 2000
+myInt1 ==> 45973
+
+jshell> long myLong1 = 50_000 + ((myByte1 + myShort1 + myInt1) * 10);
+myLong1 ==> 529830
+
+jshell> System.out.print("Integer Float Range (" + Float.MIN_VALUE + " to " + Float.MAX_VALUE + ")");
+Integer Float Range (1.4E-45 to 3.4028235E38)
+jshell> System.out.print("Integer Double Range (" + Double.MIN_VALUE + " to " + Double.MAX_VALUE + ")");
+Integer Double Range (4.9E-324 to 1.7976931348623157E308)
+
+jshell> System.out.print("A float has a width of " + Float.SIZE);
+A float has a width of 32
+
+jshell> System.out.print("A double has a width of " + Double.SIZE);
+A double has a width of 64
+
+jshell> float myFloatValue1 = 5F; double myDoubleValue = 5D;
+myFloatValue1 ==> 5.0
+myDoubleValue ==> 5.0
+
+jshell> float myOtherFloat = (float) 5.25;
+myOtherFloat ==> 5.25
+
+jshell> float myOtherFloat = 5.25f;
+myOtherFloat ==> 5.25
+
+jshell> myIntValue = 5 / 2;
+myIntValue ==> 2
+
+jshell> myFloatValue = 5f / 2f;
+myFloatValue ==> 2.5
+
+jshell> myDoubleValue = 5d / 2d;
+myDoubleValue ==> 2.5
+
+jshell> myIntValue = 5 / 3;
+myIntValue ==> 1
+
+jshell> myFloatValue = 5f / 3f;
+myFloatValue ==> 1.6666666
+
+jshell> myDoubleValue = 5d / 3d;
+myDoubleValue ==> 1.6666666666666667
+
+jshell> myDoubleValue = 5.00 / 3.00;
+myDoubleValue ==> 1.6666666666666667
+
+jshell> myDoubleValue = 5.00 / 3;
+myDoubleValue ==> 1.6666666666666667
+
+jshell> myDoubleValue = 5.00 / 3f;
+myDoubleValue ==> 1.6666666666666667
+
+jshell> myFloatValue = 5.00 / 3f;
+|  Error:
+|  incompatible types: possible lossy conversion from double to float
+|  myFloatValue = 5.00 / 3f;
+|                 ^-------^
+
+jshell> double pounds = 120d;
+pounds ==> 120.0
+
+jshell> double kilograms = 0.45359237d * pounds;
+kilograms ==> 54.4310844
+
+jshell> System.out.print(pounds + " lbs equals to " + kilograms + " kgs");
+120.0 lbs equals to 54.4310844 kgs
+jshell> double pi = 3.1415927d;
+pi ==> 3.1415927
+
+jshell> double anotherNumber = 3.141_592_700d;
+anotherNumber ==> 3.1415927
+
+jshell> char mySimpleChar = '?';
+mySimpleChar ==> '?'
+
+jshell> char myUnicodeChar = '\u003F';
+myUnicodeChar ==> '?'
+
+jshell> char myDecimalChar = 63;
+myDecimalChar ==> '?'
+
+
+jshell> System.out.print("My values are " + mySimpleChar + ", " + myUnicodeChar + ", " + myDecimalChar + ".");
+My values are ?, ?, ?.
+
+jshell> boolean myTrueBooleanValue = true;
+myTrueBooleanValue ==> true
+
+jshell> boolean myFalseBooleanValue = false;
+myFalseBooleanValue ==> false
+
+jshell> String myString = "This is a string";
+myString ==> "This is a string"
+
+jshell> System.out.print("myString is equal to " + myString);
+myString is equal to This is a string
+jshell> myString = myString + ", and this is more.";
+myString ==> "This is a string, and this is more."
+
+jshell> System.out.print("myString is equal to " + myString);
+myString is equal to This is a string, and this is more.
+jshell> myString = "I wish I had \u0024 1,000,000.00";
+myString ==> "I wish I had $ 1,000,000.00"
+
+jshell> {
+   ...>     String numberString = "250.55";
+   ...>     numberString = numberString + "49.45";
+   ...>     System.out.print(numberString);
+   ...> }
+250.5549.45
+
+jshell> String lastString = "10"; int myInt = 50;
+lastString ==> "10"
+myInt ==> 50
+
+jshell> lastString = lastString + myInt;
+lastString ==> "1050"
+
+jshell> double doubleNumber = 120.47; lastString = lastString + doubleNumber;
+doubleNumber ==> 120.47
+lastString ==> "1050120.47"
+
+
+
+
